@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { IoLocationSharp } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { FcCalendar } from "react-icons/fc";
@@ -45,3 +46,11 @@ export const Events = ({ name, location, speaker, time }) => {
     </ItemContainer>
   );
 };
+
+
+Events.Prototypes = {
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  speaker: PropTypes.string.isRequired,
+  time: PropTypes.array.isRequired,
+}

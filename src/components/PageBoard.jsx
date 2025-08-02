@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Box, List } from "./Box";
 
 export const PageBoard = ({ events }) => {
@@ -8,3 +10,7 @@ export const PageBoard = ({ events }) => {
     </Box>
   );
 };
+
+PageBoard.prototypes = {
+  events: PropTypes.func.isRequired
+}
