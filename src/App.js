@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { PageBoard } from "./components/PageBoard";
+import { Events } from "./components/Events";
+import array from "./data/upcoming-events.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PageBoard
+        events={array.map((item, idx) =>
+            <Events
+              key={idx}
+              name={item.name}
+              time={item.time}
+              location={item.location}
+              speaker={item.speaker}
+            />
+        )}
+      />
     </div>
   );
 }
